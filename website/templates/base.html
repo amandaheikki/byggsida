@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/stylesheet.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/navsheet.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/footersheet.css' %}">
+    <link rel="icon" type="icon/png" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Poppins:wght@100&family=Raleway:wght@100;500&display=swap" rel="stylesheet">
+    <title>Östanbäcks generationsbyggen</title>
+  
+</head>
+<body> 
+{% include 'navbar.html' %} 
+<main> 
+
+{% block content %}
+{% endblock content %}
+
+</main> 
+
+
+ {% include 'footer.html'%} 
+
+{% block scripts %}
+    
+{% endblock scripts %}
+
+
+
+<script src="{% static 'website/script.js' %}"></script>
+
+</body>
+</html>
+
+

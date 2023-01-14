@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+<div class="links-header"><hr></div>
+
+<div class="aboutus-start">
+      <h2>REFERENSER</h2>
+
+</div>
+
+<div class="ref-gallery">
+    {% for images in ref_img %}
+      <div class="box">
+       
+        <ul>
+          <li><img src="{{images.image.url}}" alt="Bild på tidigare genomfört projekt av Östanbäcks generationsbyggen" class="ref-images"></li>
+          <li>{{images.caption}}</li>
+          <li>
+            {% if user.is_authenticated %}
+            <form method="post" action="{% url 'delete_image' images.pk %}">
+              {% csrf_token %}
+              <button class="updates-btn-about" type="submit">Radera bild</button>
+              {% endif %}
+            </form>
+          </li>
+      
+        </ul>
+    
+      </div> 
+  
+      {% endfor %}
+    </div>
+
+<div>
+  <div class="add_image">
+    {% if user.is_authenticated %}
+    <button class="updates-btn-about"><a href="{% url 'upload_images' %}">Ladda upp ny bild</a></button>
+    {% endif %}
+</div> 
+</div>
+
+<div class="ref-text">
+      <ul class="insta-link">
+        <li>
+        <span><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></span><br>
+        <span>Följ oss på instagram också!</span> 
+      </li>
+      </ul>
+   
+</div>
+
+<div class="space2"></div>
+
+
+</main>
+
+
+{% endblock content %}

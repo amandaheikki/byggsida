@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<main>
+<div class="main-container">
+        <div class="heading-title">
+            <h1 id="h1-heading">Östanbäcks generationsbyggen</h1>
+         <h2 id="h2-heading">Kompetens & trygghet i generationer</h2> 
+     <div class="button-wrapper">
+         <a href="{% url 'references' %}" type="button" class="reference-button1">Se tidigare projekt!</a>
+    </div>
+    
+    </div>
+</div>
+
+
+
+<div class="about-container">
+  
+    {% for x in obj %}
+    <div class="about_us"> 
+      <img class="main-img" src="{{x.start_img}}" alt="Östanbäcks generationsbyggen">
+      <div class="about_text">
+
+        <h2>{{x.title}}</h2>
+        <p>{{x.content}}</P>
+          <div class="button-wrapper2">
+            <a href="{% url 'about' %}" type="button" class="reference-button1">Läs mer om oss</a>
+        </div>
+            {% if user.is_authenticated %}
+            <button class="updates-btn"><a href="{% url 'update' x.id %}">Uppdatera</a></button>
+            {% endif %}
+        </div>
+     </div>
+  
+  
+    {% endfor %}
+</div>
+
+  
+
+<div class="space">
+</div>
+
+<div class="bottom-links">
+    {% for y in obj %}
+      <div>
+        {% if y.about_img %}
+          <a href="{% url 'about' %}"><img src="{{ y.about_img }}" alt="Om oss på Östanbäcks generationsbyggen" class="bottom-images"></a>
+          {% endif%}
+        <div>
+          <p class="bottom-p-toplink"><a href="{% url 'about' %}">Om oss</a></p>
+          <p>{{y.about}}</p>
+          <p class="bottom-p-link"><a href="{% url 'about' %}">Läs mer</a></p>
+          <div>
+            {% if user.is_authenticated %}
+            <button class="updates-btn"><a href="{% url 'updatecontent' y.id %}">Uppdatera</a></button>
+            {% endif %}
+        </div>
+        </div>
+      </div>
+      <div>
+        {% if y.contact_img %}
+        <a href="{% url 'contact' %}"><img src="{{y.contact_img}}"  alt="Kontakta oss på Östanbäcks generationsbyggen"  class="bottom-images"></a>
+        {% endif %}
+        <div>
+          <p class="bottom-p-toplink"><a href="{% url 'contact' %}">Kontakt</a></p>
+          <p>{{y.contact}}</p>
+          <p class="bottom-p-link"><a href="{% url 'contact' %}">Läs mer</a></p>
+          <div>
+            {% if user.is_authenticated %}
+            <button class="updates-btn"><a href="{% url 'updatecontent2' y.id %}">Uppdatera</a></button>
+            {% endif %}
+        </div>
+        </div>
+      </div>
+      <div>
+        {% if y.services_img %}
+          <a href="{% url 'services' %}"><img src="{{y.services_img}}"  alt="Läs mer om Östanbäcks generationsbyggen"  class="bottom-images"></a>
+        {% endif %}
+        <div>
+          <p class="bottom-p-toplink"><a href="{% url 'services' %}">Tjänster</a></p>
+          <p>{{y.services}}</p>
+          <p class="bottom-p-link"><a href="{% url 'services' %}">Läs mer</a></p>
+        </div>
+        <div>
+          {% if user.is_authenticated %}
+          <button class="updates-btn"><a href="{% url 'updatecontent3' y.id %}">Uppdatera</a></button>
+          {% endif %}
+      </div>
+
+      </div>
+      {% endfor %}
+</div>
+
+
+<div class="insta-feed">
+ <div class="ref-text">
+      <ul class="insta-link">
+        <li>
+        <span><a href="#"><i class="fa fa-instagram" id="fa-insta" aria-hidden="true"></i></a></span>
+      </li>
+      </ul>
+  </div> 
+      <h1>FÖLJ OSS</h1>
+      <h2>Häng med på vad vi gör om dagarna!</h2>
+      <!--   <div data-behold-id="E1JHsZKAxeEz9OLkfvDI" class="insta-div"></div>
+        <script src="https://w.behold.so/widget.js" type="module"></script>   -->
+</div>
+
+
+
+<div class="space2">
+</div>
+
+
+<div class="job-estimate">
+        <div class="job-form">
+         
+     <form id="form" action="https://formsubmit.co/rickard@zbyggstyrning.se" method="POST"> 
+        {% csrf_token %}
+        <h1>Kontakta oss!</h1>
+           <h2 class="phone"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:+0738249144">+46 73 824 91 44</a></h2>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" class="field"  name="name" placeholder="Namn" required>
+                <input type="email" class="field" name="mail" placeholder="Mejladress" required>
+                <input type="text" class="field" name="phone" placeholder="Mobilnummer">
+                <textarea id="message" name="message" placeholder="Meddelande"></textarea>
+              <input type="submit" value="Skicka" id="submit"> 
+    </form>
+    </div>
+
+ </div>
+
+
+
+<div class="space"></div>
+
+</main>
+{% endblock content %}

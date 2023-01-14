@@ -1,0 +1,11 @@
+
+{% load static %}
+
+<h1>Ladda upp bild</h1>
+<form method="post" enctype="multipart/form-data">
+     {% csrf_token %}
+     {{form.as_p }}
+     <hr>
+     <button class="updates-btn" type="submit">Bekräfta ändringar</button>
+     <button><a href="{% url 'references' %}">Avbryt</a></button>
+</form>

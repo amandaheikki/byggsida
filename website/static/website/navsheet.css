@@ -1,0 +1,94 @@
+.logo{
+    width:35%;
+    padding:5px 5px
+}
+nav{
+    background:#fff;
+    color:#000;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    width:100%
+}
+.nav-list{
+    list-style-type:none
+}
+.nav-list .list-item{
+    display:inline-block
+}
+nav a{
+    color:#000;
+    text-decoration:none;
+    text-transform:uppercase;
+    text-align:center;
+    padding:12px
+}
+nav a:hover{
+    cursor:pointer;
+    color:var(--darkerbrown)
+}
+
+@media only screen and (max-width:1024px)
+{
+    .nav-list{
+        display:none
+    }
+.nav-list.toggleCls{
+    display:block
+}
+.hamIcon{
+    position:absolute;
+    top:0;
+    right:20px;
+    font-size:24px;
+    font-weight:400
+}
+.hamIcon:hover{
+    cursor:pointer
+}
+nav{
+    flex-direction:column;
+    position:relative;
+    top:0
+}
+.logo{
+    width:auto;
+    padding:5px 5px;
+    margin-left:0
+}
+.nav-list{
+    list-style-type:none;
+    width:100%;
+    background-color:#fff;
+    text-align:center;
+    padding-top:10px;
+    display:none;
+    font-size:36px
+}
+.nav-list .list-item:hover{
+    background-color:#c7cdd45b
+}
+.nav-list .list-item a:hover{
+    color:var(--brown)
+}
+.nav-list .list-item{
+    display:block;
+    padding:10px
+    ;padding:10px
+}
+.nav-list .list-item a{
+    font-size:24px;
+    color:#000
+}
+.logo{
+    height:120px
+}
+}
+
+@media only screen and (min-width:1025px){
+    .hamIcon{
+        display:none
+    }
+    .nav-list{
+        display:initial
+    }}

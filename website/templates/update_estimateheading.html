@@ -1,0 +1,10 @@
+{% load static %}
+
+<h1>Uppdatera OFFERT</h1>
+<form method="post">
+     {% csrf_token %}
+     {{form.as_p}}
+      <hr>
+     <button type="submit">Bekräfta ändringar</button>
+     <button><a href="{% url 'estimate' %}">Avbryt</a></button>
+</form>

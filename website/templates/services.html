@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+<div class="links-header"><hr></div>
+
+    
+<div class="aboutus-start">
+            {% for x in obj %}
+            <h2>{{x.title}}</h2><br>
+            <h3>{{x.topcontent}}</h3>
+</div>
+        <div>
+            {% if user.is_authenticated %}
+            <button class="updates-btn"><a href="{% url 'update_serviceheading' x.id %}">Uppdatera</a></button>
+            {% endif %}
+        </div> 
+        {% endfor %}
+<div class="space2">
+        </div>
+<div class="container">
+        <div class="aboutus">
+            {% for y in obj %}
+            <div>
+             {% if y.box1_img %}
+              <img src="{{ y.box1_img }}" class="about-images" alt="Tjänster Östanbäcksgenerationsbyggen">
+              {% endif %}
+            </div>
+            <div>
+                <h4>{{y.box1Title}}</h4>
+                <p>{{y.box1Des}}</p>
+                <div>
+                    {% if user.is_authenticated %}
+                    <button class="updates-btn-about"><a href="{% url 'update_service1' y.id %}">Uppdatera</a></button>
+                    {% endif %}
+                </div> 
+            </div>
+           
+            {% endfor %}
+        </div>
+        <div class="aboutus">
+            {% for y in obj %}
+            <div>
+                <h4>{{y.box2Title}}</h4>
+                <p>{{y.box2Des}}</p>
+                <div>
+                    {% if user.is_authenticated %}
+                    <button class="updates-btn-about"><a href="{% url 'update_service2' y.id %}">Uppdatera</a></button>
+                    {% endif %}
+                </div> 
+            </div>
+            <div>
+                {% if y.box2_img %}
+                 <img src="{{ y.box2_img }}" class="about-images" alt="Tjänster Östanbäcks generationsbyggen">
+                 {% endif %}
+               </div>
+            {% endfor %}
+        </div>
+    </div>
+<div class="space2"></div>
+<div class="job-estimate">
+            <div class="job-form">
+         <form id="form" action="https://formsubmit.co/rickard@zbyggstyrning.se" method="POST"> 
+            {% csrf_token %}
+            <h1>Kontakta oss!</h1>
+            <h2 class="phone"><span><i class="fa fa-phone" aria-hidden="true"></i></span><a href="tel:+0738249144">+46 73 824 91 44</a></h2>
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" class="field"  name="name" placeholder="Namn" required>
+                    <input type="email" class="field" name="mail" placeholder="Mejladress" required>
+                    <input type="text" class="field" name="phone" placeholder="Mobilnummer">
+                    <textarea id="message" name="message" placeholder="Meddelande"></textarea>
+        
+                  <input type="submit" value="Skicka" id="submit"> 
+        </form>
+           </div>
+    
+        </div>
+<div class="space2"></div>
+
+</main>
+{% endblock content %}
