@@ -3,6 +3,8 @@ from email.mime import image
 from turtle import title
 from django.db import models
 from django.urls import reverse
+from tkinter import *
+from tkinter import ttk
 
 
 
