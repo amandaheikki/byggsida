@@ -5,6 +5,7 @@ from django.db import models
 from django.urls import reverse
 from tkinter import *
 from tkinter import ttk
+import tkinter as tkinter
 
 
 
