@@ -49,12 +49,12 @@ class updateServiceHeading(forms.ModelForm):
 
 class updateServiceContent1(forms.ModelForm):
     class Meta:
-        model = AboutModel
+        model = ServiceModel
         fields = ["box1Title", "box1Des", "box1_img"]  
 
 class updateServiceContent2(forms.ModelForm):
     class Meta:
-        model = AboutModel
+        model = ServiceModel
         fields = ["box2Title", "box2Des", "box2_img"]  
 
 

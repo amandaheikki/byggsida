@@ -732,7 +732,7 @@ input[type=submit]:hover{
 .aboutus2 p{
  
     padding: 15px;
-    width: 30%;
+    max-width: 40%;
     margin: 0px auto;
     text-align: center;
    
@@ -1052,7 +1052,6 @@ input[type=submit]:hover{
 
         flex-direction:column-reverse;
      
-    
     }
 
  
@@ -1068,7 +1067,8 @@ input[type=submit]:hover{
     }
 
     .aboutus2 p{
-        width: 50%;
+       width: auto;
+       max-width: 70%;
     }
 
     .about-image{
