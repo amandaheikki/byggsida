@@ -1169,6 +1169,8 @@ input[type=submit]:hover{
     min-height: 900px;
     flex-direction: column;
     padding-bottom: 60px;
+    padding-top: 60px;
+   
   
 }
 .contact-inf {
