@@ -2,7 +2,7 @@ from http.client import HTTPResponse
 from multiprocessing import context
 from django.shortcuts import get_object_or_404, redirect, render, HttpResponseRedirect
 from .models import StartModel, EstimateModel, ContactModel, AboutModel, ServiceModel, ReferenceModel
-from .form import updateStartPage, updateStartPageContent1, updateStartPageContent2, updateStartPageContent3, updateAboutPage, updateAboutContent1, updateAboutContent2, updateServiceHeading, updateServiceContent1, updateServiceContent2, updateEstimateHeading, addImages
+from .form import updateStartPage, updateStartPageContent1, updateStartPageContent2, updateStartPageContent3, updateAboutPage, updateAboutContent1, updateServiceHeading, updateServiceContent1, updateServiceContent2, updateEstimateHeading, addImages
 from django.contrib.auth.decorators import login_required
 from .form import *
 from django.contrib import messages
@@ -109,18 +109,6 @@ def aboutpage_updateBox1(request, id):
         form=updateAboutContent1(instance=start_instance)
     return render(request, "update_about2.html",{"form":form})   
 
-@login_required
-def aboutpage_updateBox2(request, id):
-    obj=get_object_or_404(AboutModel, id=id)
-    if request.method == "POST":
-        form=updateAboutContent2(request.POST, request.FILES, instance=obj)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect("/about")
-    else:
-        start_instance = AboutModel.objects.get(id=1) 
-        form=updateAboutContent2(instance=start_instance)
-    return render(request, "update_about3.html",{"form":form})  
 
 # SERVICE
 
