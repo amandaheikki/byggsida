@@ -39,10 +39,7 @@ class updateAboutContent1(forms.ModelForm):
         model = AboutModel
         fields = ["box1Title", "box1Des", "box1_img"]   
 
-class updateAboutContent2(forms.ModelForm):
-    class Meta:
-        model = AboutModel
-        fields = ["box2Title", "box2Des", "box2_img"]  
+
   
 #SERVICES-PAGE
 class updateServiceHeading(forms.ModelForm):

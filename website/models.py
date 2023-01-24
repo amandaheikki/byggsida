@@ -27,11 +27,8 @@ class AboutModel(models.Model):
     title = models.CharField(max_length=200)
     topcontent = models.TextField()
     box1Title = models.CharField(max_length=200, null=True)
-    box2Title = models.CharField(max_length=200, null=True)
     box1Des = models.TextField(null=True)
-    box2Des = models.TextField(null=True)
     box1_img = models.ImageField(null=True, blank=True, upload_to="images/%y")
-    box2_img = models.ImageField(null=True, blank=True, upload_to="images/%y")
     def __str__(self):
         return self.title
 

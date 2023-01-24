@@ -157,6 +157,7 @@ main{
     font-weight: 500;
     text-transform: uppercase;
     margin-top: 8%;
+    margin: 0px auto;
     text-align: center;
 
 }
@@ -233,7 +234,7 @@ main{
 }
 
 .about_text h2{
-    font-size: 42px;
+    font-size: 32px;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
@@ -674,7 +675,6 @@ input[type=submit]:hover{
 
 
 
-
 .container{
     width: 100%;
     height: auto;
@@ -685,7 +685,6 @@ input[type=submit]:hover{
     width: 100%;
     height: 500px;
    
-
 }
 
 .aboutus{
@@ -709,6 +708,36 @@ input[type=submit]:hover{
     text-align: left;
 }
 
+.aboutus2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--grey);
+ 
+}
+
+.aboutus2 > div{
+    min-height: 400px;
+    height: auto;
+    width: auto;
+ 
+}
+
+.aboutus2 h4{
+    
+    padding-top: 35px;
+    text-transform: uppercase;
+}
+.aboutus2 p{
+ 
+    padding: 15px;
+    width: 30%;
+    margin: 0px auto;
+    text-align: center;
+   
+}
+
 
 
 .fa-check{
@@ -723,8 +752,22 @@ input[type=submit]:hover{
     opacity: 0.9;
     -webkit-filter: grayscale(50%);
     filter: grayscale(50%);
-    
+
 } 
+
+.about-image{
+  
+    padding: 15px;
+    margin-top: 45px;
+    width:auto;
+    height: 450px;
+    opacity: 0.9;
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
+
+   
+
+}
 
 .updates-btn-about{
     margin-bottom: 2rem;
@@ -1020,6 +1063,21 @@ input[type=submit]:hover{
        
     }
 
+    .aboutus2 >div{
+        height: auto;
+    }
+
+    .aboutus2 p{
+        width: 50%;
+    }
+
+    .about-image{
+      
+        width: auto;
+      
+      
+       
+    }
 
     .contact-info{
         flex-direction: column;
@@ -1038,17 +1096,11 @@ input[type=submit]:hover{
     }
 
 
-
-    .about_text{
-
-        max-width: 350px;
-    }
-
- 
     .about-container h2{
       
-        max-width: 100%;
+        font-size: 24px;
         text-align: left;
+        padding: 0px;
         
     } 
     .about-container p{

@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import startpage_items, startpage_update, startpage_contentupd1, startpage_contentupd2, startpage_contentupd3, startpage_content, aboutpage_items, aboutpage_update, aboutpage_updateBox1, aboutpage_updateBox2, update_servicesheading, services_items, update_servicescontent1, update_servicescontent2, update_estimateheading, estimate_items, contact_items, update_contactheading, displayImages, add_image, delete_image
+from .views import startpage_items, startpage_update, startpage_contentupd1, startpage_contentupd2, startpage_contentupd3, startpage_content, aboutpage_items, aboutpage_update, aboutpage_updateBox1, update_servicesheading, services_items, update_servicescontent1, update_servicescontent2, update_estimateheading, estimate_items, contact_items, update_contactheading, displayImages, add_image, delete_image
 
 urlpatterns = [
     path('', startpage_items, name="index"),
@@ -12,7 +12,6 @@ urlpatterns = [
     path('about', aboutpage_items, name="about" ),
     path('<id>/update_about1', aboutpage_update, name="update_about1"),
     path('<id>/update_about2', aboutpage_updateBox1, name="update_about2"),
-    path('<id>/update_about3', aboutpage_updateBox2, name="update_about3"),
     path('services', services_items, name="services"),
     path('<id>/update_serviceheading', update_servicesheading, name="update_serviceheading"),
     path('<id>/update_service1', update_servicescontent1, name="update_service1"),
