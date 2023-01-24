@@ -27,7 +27,7 @@
         <h2>{{x.title}}</h2>
         <p>{{x.content}}</P>
           <div class="button-wrapper2">
-            <a href="{% url 'about' %}" type="button" class="reference-button1">Läs mer om oss</a>
+            <a href="{% url 'about' %}" type="button" class="reference-button1">Läs mer</a>
         </div>
             {% if user.is_authenticated %}
             <button class="updates-btn"><a href="{% url 'update' x.id %}">Uppdatera</a></button>
