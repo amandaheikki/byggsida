@@ -1013,6 +1013,7 @@ input[type=submit]:hover{
        
     }
 
+
     .aboutus-start h2{
         width: 100%;
     }
@@ -1097,17 +1098,23 @@ input[type=submit]:hover{
 
 
     .about-container h2{
-      
+        width: auto;
         font-size: 24px;
-        text-align: left;
+        text-align: center;
         padding: 0px;
         
     } 
     .about-container p{
-        text-align: left;
+        text-align: center;
+        width: auto;
       
         
     } 
+
+    .about_text{
+        width: auto;
+        max-width: 70%;
+    }
     .main-logo{
         display: none;
 
