@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-d5-67kkqh0*w7&zzwe*2w%f&h%z=v5t1-dee4$92yy9qjyl#-j
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', "ostanback-heroku.herokuapp.com", "ostanbacksgenerationsbyggen.se"]
-SITE_ID = 1
+
 
 # Application definition
 
