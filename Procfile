@@ -1,1 +1,2 @@
-web gunicorn ogb_website.wsgi --log-file -
+release: python manage.py migrate
+web: gunicorn ogb_website.wsgi
