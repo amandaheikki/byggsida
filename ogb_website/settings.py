@@ -30,13 +30,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-d5-67kkqh0*w7&zzwe*2w%f&h%z=v5t1-dee4$92yy9qjyl#-j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ['127.0.0.1', '*']
+DEBUG = True
+ALLOWED_HOSTS = ['127.0.0.1', 'ostanback-heroku.herokuapp.com', '*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'website',
     'admin_interface',
     'colorfield',
     'django.contrib.admin',
@@ -45,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'website.apps.WebsiteConfig',
    
 ]
 
@@ -157,9 +157,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 
-STATICFILES_ROOT = os.path.join(BASE_DIR,'staticfiles'),
-STATIC_URL = '/static/',
-MEDIA_ROOT = 'media/',
-MEDIA_ROOT = os.path.join(BASE_DIR,'media'),
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static'),]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_ROOT = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 django_heroku.settings(locals())
