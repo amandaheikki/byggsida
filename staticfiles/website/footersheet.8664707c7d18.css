@@ -1,0 +1,138 @@
+footer{
+    position:relative;
+    width:100%;
+    height:auto;
+    padding:50px 100px;
+    background:#111;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap
+}
+footer .footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    flex-direction:row
+}
+footer .footer-container .about{
+    margin-right:30px
+}
+footer .footer-container .about.about-us{
+    width:40%
+}
+#p-about-us{
+    position:relative;
+    color:#fff;
+    font-weight:500;
+    margin-bottom:15px;
+    width:80%
+}
+#h2-footer{
+    position:relative;
+    color:#fff;
+    font-weight:500;
+    margin-bottom:15px
+}
+.social{
+    margin-top:20px;
+    display:flex
+}
+.social li{
+    list-style:none
+}
+.social li a{
+    display:inline-block;
+    width:40px;
+    height:40px;
+    background:var(--darkerbrown);
+    color:var(--beige);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-right:10px;
+    text-decoration:none;
+    border-radius:4px;
+    font-size:24px
+}
+.social li a:hover{
+    background-color:var(--brown)
+}
+.links{
+    position:relative;
+    width:25%
+}
+.links ul li{
+    list-style:none
+}
+.links ul li a{
+    color:#fff;
+    text-decoration:none;
+    margin-bottom:10px;
+    display:inline-block
+}
+.links ul li a:hover{
+    color:var(--brown)
+}
+.contact{
+    width:calc(35% - 60px);
+    margin-right:0!important
+}
+.contact .info{
+    position:relative
+}
+.contact .info li{
+    display:flex;
+    margin-bottom:16px
+}
+.contact .info li span:nth-child(1){
+    color:#fff;
+    font-size:20px;
+    margin-right:10px
+}
+.contact .info li span{
+    color:#fff
+}
+.contact .info li a{
+    color:#fff;
+    text-decoration:none
+}
+.contact .info li a:hover{
+    color:var(--brown)
+}
+.copyright{
+    width:100%;
+    background:#000;
+    color:#f5f5f5;
+    text-align:center;
+    padding:15px 15px;
+    text-transform:uppercase;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:11px
+}
+#login{
+    margin-right:0;
+    text-align:right;
+    color:#fff
+}
+#login:hover{
+    text-decoration:underline
+}
+@media only screen and (max-width:1024px){
+    footer{
+        padding:40px
+    }
+    footer .footer-container{
+        flex-direction:column
+    }
+    footer .footer-container 
+    .about{
+        margin-right:0;
+        margin-bottom:40px
+    }
+    footer .footer-container .about.about-us,.links,.contact{
+        width:100%;
+        padding-top:40px}
+    .copyright{
+        padding:8px 40px
+    }}
