@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 from decouple import config
 import dj_database_url
-import django_heroku
+import django_on_heroku
 
 
 
@@ -161,4 +161,4 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-django_heroku.settings(locals())
+django_on_heroku.settings(locals())
