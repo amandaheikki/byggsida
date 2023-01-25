@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+import django_heroku
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,7 +29,7 @@ SECRET_KEY = 'django-insecure-d5-67kkqh0*w7&zzwe*2w%f&h%z=v5t1-dee4$92yy9qjyl#-j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', "https://ostanback-heroku.herokuapp.com/"]
+ALLOWED_HOSTS = ['127.0.0.1', "ostanback-heroku.herokuapp.com/"]
 
 
 # Application definition
@@ -81,21 +82,21 @@ WSGI_APPLICATION = 'ogb_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#       'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'website_db',
-        'USER':'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
+        'NAME': 'd40t719oabnm0s',
+        'USER':'bzkrqrnmnhlmps',
+        'PASSWORD': 'ee84c355edb2f7f296a9b97c02f314960654325bfadaa630391f551a466c6068',
+        'HOST': 'ec2-63-32-248-14.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
 
     }
@@ -140,9 +141,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'website/static'),]
+django_heroku.settings(locals())
 MEDIA_ROOT = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
