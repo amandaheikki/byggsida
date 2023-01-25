@@ -37,7 +37,6 @@ ALLOWED_HOSTS = ['127.0.0.1', "ostanback-heroku.herokuapp.com", "ostanbacksgener
 # Application definition
 
 INSTALLED_APPS = [
-    'website',
     'admin_interface',
     'colorfield',
     'django.contrib.admin',
